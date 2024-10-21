@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "3a9d2d15-f6db-4d04-b98f-d587978ba062",
+		"name": "Vet-pet-care-spring-security Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25057297",
+		"_collection_link": "https://bold-robot-589933.postman.co/workspace/My-Workspace~594a9c7f-7372-4bd8-8004-a35a31159488/collection/25057297-3a9d2d15-f6db-4d04-b98f-d587978ba062?action=share&source=collection_link&creator=25057297"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"sachin\",\r\n    \"password\": \"password\",\r\n    \"email\": \"sachin@gmail.com\",\r\n    \"country\": \"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/app/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"sachin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/app/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/app/users/verify?userId=15",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"app",
+						"users",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/app/users/15"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Role",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"GetVisits\",\r\n    \"api\": \"/generated_app/Visits\",\r\n    \"apiAccess\": \"GET\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/app/role/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Roles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"GetAppointement\",\r\n    \"api\": \"/generated_app/Appointments\",\r\n    \"apiAccess\": \"GET\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/app/role/list"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjkzNTQ5Nzk3LCJpYXQiOjE2OTE3NDk3OTd9.SM8PqAqAEfjipdTA_2WhL4kjajfoiF3Aj25bM-RMkNJZTyKOUppCQLd1Q5FvSB0aS_kYFjryqrMqYcx_o32PaA"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 16,\r\n    \"roleId\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/app/role/addUserRole/"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Host Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ip\": \"34.238.241.129\",\r\n    \"port\": 8084,\r\n    \"scheme\": \"http\",\r\n    \"serviceName\": \"generated_app\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/app/hosts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Host info By id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{host}}/app/hosts/17"
+			},
+			"response": []
+		},
+		{
+			"name": "List All Host",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{host}}/app/hosts"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Host info By id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{host}}/app/hosts/15"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://3.132.27.172:8081",
+			"type": "string"
+		}
+	]
+}

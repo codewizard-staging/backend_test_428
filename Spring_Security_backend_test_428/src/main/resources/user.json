@@ -1,0 +1,12 @@
+[
+  {
+    "username": "admin",
+    "password": "password",
+    "name": "Admin User",
+    "mobileNumber": "1234567890",
+    "active": true,
+    "email": "test@gmail.com",
+    "isEmailVerified": true,
+    "country": "India"
+  }
+]

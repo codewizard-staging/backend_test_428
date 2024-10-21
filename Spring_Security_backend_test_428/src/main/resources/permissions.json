@@ -1,0 +1,107 @@
+[
+  {
+    "name": "List All Roles",
+    "api": "/app/roles/\\d+",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Add roles",
+    "api": "/app/roles",
+    "apiAccess": "POST"
+  },
+  {
+    "name": "Update roles",
+    "api": "/app/roles",
+    "apiAccess": "PUT"
+  },
+  {
+    "name": "Delete role by Id",
+    "api": "/app/roles/\\d+",
+    "apiAccess": "DELETE"
+  },
+  {
+    "name": "List roles",
+    "api": "/app/roles",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Assign Roles to user",
+    "api": "/app/users/\\d+/roles",
+    "apiAccess": "PUT"
+  },
+  {
+    "name": "List User Roles",
+    "api": "/app/users/\\d+/roles",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Remove Roles from User",
+    "api": "/app/users/\\d+/roles",
+    "apiAccess": "DELETE"
+  },
+  {
+    "name": "Add permission",
+    "api": "/app/permissions",
+    "apiAccess": "POST"
+  },
+  {
+    "name": "Update permission",
+    "api": "/app/permissions",
+    "apiAccess": "PUT"
+  },
+  {
+    "name": "List permissions",
+    "api": "/app/permissions",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Add existing permissions to roles",
+    "api": "/app/roles/\\d+/permissions",
+    "apiAccess": "PUT"
+  },
+  {
+    "name": "Remove existing permissions to roles",
+    "api": "/app/roles/\\d+/permissions",
+    "apiAccess": "DELETE"
+  },
+  {
+    "name": "Get Permission by id",
+    "api": "/app/permissions/\\d+",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Delete Permission by id",
+    "api": "/app/permissions/\\d+",
+    "apiAccess": "DELETE"
+  },
+  {
+    "name": "Add Host info",
+    "api": "/app/hosts",
+    "apiAccess": "POST"
+  },
+  {
+    "name": "Update Host info",
+    "api": "/app/hosts",
+    "apiAccess": "PUT"
+  },
+  {
+    "name": "List Host info",
+    "api": "/app/hosts",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Get Host info by id",
+    "api": "/app/hosts/\\d+",
+    "apiAccess": "GET"
+  },
+  {
+    "name": "Delete Host info by id",
+    "api": "/app/hosts/\\d+",
+    "apiAccess": "DELETE"
+  },
+  {
+    "name": "Get User by id",
+    "api": "/app/users/\\d+",
+    "apiAccess": "GET"
+  }
+]

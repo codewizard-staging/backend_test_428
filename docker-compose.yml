@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:14.6
+    container_name: postgresql_backend_test_428
+    environment:
+      - PGHOST=<<DB_HOST>>
+      - PGUSER=<<DB_USER>>
+      - PGPASSWORD=<<DB_PWD>>
+    volumes:
+      - ./create-schema.sql:/create-schema.sql
+    command: ["bash", "-c", "psql -f /create-schema.sql"]
+
+  spring_security:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: ./Dockerfile_Spring_Security
+    restart: on-failure
+    ports:
+      - 8087:8080
+    environment:
+      - spring.profiles.active=dev
+      - spring.datasource.driver-class-name=org.postgresql.Driver
+      - spring.datasource.url=jdbc:postgresql://<<DB_HOST>>:5432/postgres?currentSchema=test_562
+      - spring.datasource.username=<<DB_USER>>
+      - spring.datasource.password=<<DB_PWD>>
+      - spring.jpa.hibernate.ddl-auto=update
+      - spring.jpa.properties.hibernate.default_schema=test_562
+      - spring.jpa.show-sql=true
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+
+  app:
+    depends_on:
+      - db
+    build: .
+    restart: on-failure
+    ports:
+      - 8081:8080
+    environment:
+      - spring.profiles.active=dev
+      - spring.datasource.driver-class-name=org.postgresql.Driver
+      - spring.datasource.url=jdbc:postgresql://<<DB_HOST>>:5432/postgres?currentSchema=test_562
+      - spring.datasource.username=<<DB_USER>>
+      - spring.datasource.password=<<DB_PWD>>
+      - spring.jpa.properties.hibernate.default_schema=test_562
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true

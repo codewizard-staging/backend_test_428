@@ -1,0 +1,1375 @@
+{
+	"info": {
+		"_postman_id": "dac2242e-fc96-4882-ac59-11f1ba30d4c3",
+		"name": "Vet-pet-care-spring-security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3238970"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"sachin224099234\",\r\n    \"password\": \"password\",\r\n    \"email\": \"sachinfgfdhfg9@gmail.com\",\r\n    \"country\": \"India\",\r\n    \"mobileNumber\": \"+919088167663\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"sachin224099234\",\r\n    \"password\": \"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start User Verification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"types\": [\r\n        \"EMAIL\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/users/2749195332350400/start-verifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2749195332350400",
+						"start-verifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": 7835,\r\n    \"type\": \"EMAIL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/users/2749195332350400/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2749195332350400",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"EMAIL\": \"sachin224099@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gateway/app/otp/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gateway",
+						"app",
+						"otp",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"EMAIL\",\r\n    \"value\":\"sachin224099@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/users/forgotPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": 8627,\r\n    \"type\": \"EMAIL\",\r\n    \"newPassword\": \"password1\",\r\n    \"verifyPassword\": \"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/users/2749195332350400/updatePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2749195332350400",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW4yMjQwOTkiLCJleHAiOjE3MjUzNDI3ODYsImlhdCI6MTcyMzU0Mjc4NiwiZW1haWwiOiJzYWNoaW4yMjQwOTlAZ21haWwuY29tIn0.pQtKrMimfhKLxzrPP0stN2mWXV3Zf8T29JFIOZwb-z_5nWO3ft5QD6yKGJAYhF8KfUfrSWOWVRp7648IB0V3GA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/users/2749195332350400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2749195332350400"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TEST1\",\r\n    \"description\": \"Role for Parent\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNTM0MzIwMiwiaWF0IjoxNzIzNTQzMjAyLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.HfYDbU60NDjxKZu9WNCdu1S2nqPnbAAkwdEMUEj6-TGitzK6vfxX-6kPkYdHQP5uNkKRHwZr_Zh72ximsaqGgw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2302498088184600,\r\n    \"name\": \"PARENT2\",\r\n    \"description\": \"Role for Parent\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Role By Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/roles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Roles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Role By Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/roles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Role to user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleIds\": [\r\n        \"2152762494613000\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/users/2258953878618500/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2258953878618500",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List User Roles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDExODUwNCwiaWF0IjoxNzIyMzE4NTA0LCJlbWFpbCI6InNhY2hpbjIyNDA5OUBnbWFpbC5jb20ifQ.NWBWpAI3Gb95yZ5yMLr4lop8vLVxSgKzt_KDpPVQ82o7s29wwqpY8rwWrVM0k4yswT2xSAWHAP_wUhQNKeaOxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/users/2258953878618500/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2258953878618500",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove roles from user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleIds\": [\r\n        \"2152762494613000\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/users/2258953878618500/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"users",
+						"2258953878618500",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Permission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test permission\",\r\n    \"api\": \"users/\\\\d+/verify/test\",\r\n    \"apiAccess\": \"DELETE\",\r\n    \"roleId\": \"2302498088184600\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Permisssion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2750257187094000\",\r\n    \"name\": \"Test permission\",\r\n    \"api\": \"users/\\\\d+/verify/test3\",\r\n    \"apiAccess\": \"GET\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Existing Permission to Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNTM0MzIwMiwiaWF0IjoxNzIzNTQzMjAyLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.HfYDbU60NDjxKZu9WNCdu1S2nqPnbAAkwdEMUEj6-TGitzK6vfxX-6kPkYdHQP5uNkKRHwZr_Zh72ximsaqGgw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"permissionIds\": [\r\n        \"2303601972282800\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/roles/2302498088184600/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles",
+						"2302498088184600",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Existing Permission from Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"permissionIds\": [\r\n        \"2303601972282800\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/roles/2302498088184600/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"roles",
+						"2302498088184600",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Permission By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/permissions/2303601972282800",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"permissions",
+						"2303601972282800"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Permission By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/permissions/2303601972282800",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"permissions",
+						"2303601972282800"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Permissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNTM0MzIwMiwiaWF0IjoxNzIzNTQzMjAyLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.HfYDbU60NDjxKZu9WNCdu1S2nqPnbAAkwdEMUEj6-TGitzK6vfxX-6kPkYdHQP5uNkKRHwZr_Zh72ximsaqGgw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all permission by filter by roleid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/permissions?roleId=2152762494613000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"permissions"
+					],
+					"query": [
+						{
+							"key": "roleId",
+							"value": "2152762494613000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Host Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDExOTg3MCwiaWF0IjoxNzIyMzE5ODcwLCJlbWFpbCI6InNhY2hpbjIyNDA5OUBnbWFpbC5jb20ifQ.KNAPyg1F8pm9n2ZXZJRQc-Zba0t0DkJKS-Y0uypGwYx2KMo4eqtqCb4Lz5STB8pCaf1xaWP7DN-hpSVc_KWYUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ip\": \"44.197.147.249\",\r\n    \"port\": 8088,\r\n    \"scheme\": \"http\",\r\n    \"serviceName\": \"beMeetups12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/hosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"hosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Host Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2304035479364700\",\r\n    \"ip\": \"44.197.147.249\",\r\n    \"port\": \"8089\",\r\n    \"scheme\": \"http\",\r\n    \"serviceName\": \"beMeetups12\",\r\n    \"name\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/app/hosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"hosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Host info By id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNDg5NTYxNSwiaWF0IjoxNzIzMDk1NjE1LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.A7GYP_hpS4iyNctU8WhCmeNnjihYrjrfLZYI_7Yf9SY44mhJzsAHfbNjD8FJ5YtEzbUfHz_fDonGrqiXTAvrFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/hosts/2304035479364700",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"hosts",
+						"2304035479364700"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Host",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyMzk3NjMwMiwiaWF0IjoxNzIyMTc2MzAyLCJlbWFpbCI6InNhY2hpbjIyNDA5OUBnbWFpbC5jb20ifQ.2eci18zUptV6EXZNHoFXZmxNstrCl1ibep6J5ZukyQDeKNDlIKxAKaH58AofKiQLKrtdD2VwO2x05hy3iuHIkQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/hosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"hosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Host info By id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyMzk3NjMwMiwiaWF0IjoxNzIyMTc2MzAyLCJlbWFpbCI6InNhY2hpbjIyNDA5OUBnbWFpbC5jb20ifQ.2eci18zUptV6EXZNHoFXZmxNstrCl1ibep6J5ZukyQDeKNDlIKxAKaH58AofKiQLKrtdD2VwO2x05hy3iuHIkQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app/hosts/2304035479364700",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"hosts",
+						"2304035479364700"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gateway>GetEVents",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW43IiwiZXhwIjoxNzIyNTgyODAyLCJpYXQiOjE3MjA3ODI4MDIsImVtYWlsIjoic2FjaGluMjI0MDA5OUBnbWFpbC5jb20ifQ.8iINP_TyaxNRJ1YgqQbqk_yfYciDsxWByECdfErfBQrV6ddJY20B2JFRh6kAQjjKawuv16HE98rm4pKSrpz3kw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/gateway/beMeetups/Users(1)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gateway",
+						"beMeetups",
+						"Users(1)"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Backend>GetEVents",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWRoYUBjb2RlLXdpemFyZC5haSIsImV4cCI6MTcyMjYwNzQ2NiwiaWF0IjoxNzIwODA3NDY2LCJlbWFpbCI6InJhZGhhQGNvZGUtd2l6YXJkLmFpIn0.3oaO5ehSSVp6VmJ32FuScjLiVcik_vYxBdNpPI2b14Y9xfUxyBDG3hnZlmvqbZ2pbTQtWkT5R9iFDJt1QZtRBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://44.197.147.244:9011/beMeetups/Documents(11)/$value",
+					"protocol": "http",
+					"host": [
+						"44",
+						"197",
+						"147",
+						"244"
+					],
+					"port": "9011",
+					"path": [
+						"beMeetups",
+						"Documents(11)",
+						"$value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1nY3ciLCJleHAiOjE3MjI1OTcxODQsImlhdCI6MTcyMDc5NzE4NCwiZW1haWwiOiJyYW1AY29kZS13aXphcmQuYWkifQ.IXux3T287Sf9GPA8OQPF4luan7zcHkE8kfBd7X4fzOuuHSi_vjUiA-wVuOW0KH7sAEVYef9XYoPc8PUSmMjvHA"
+					}
+				],
+				"url": {
+					"raw": "http://apprunner.code-wizard.in:8087/gateway/beMeetups/Users/$count",
+					"protocol": "http",
+					"host": [
+						"apprunner",
+						"code-wizard",
+						"in"
+					],
+					"port": "8087",
+					"path": [
+						"gateway",
+						"beMeetups",
+						"Users",
+						"$count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/gateway/beMeetups/Documents(26)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20iLCJleHAiOjE3MjMwNzY1OTQsImlhdCI6MTcyMTI3NjU5NCwiZW1haWwiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20ifQ.uUPOMMSrMOTNHnIPcEThLLsOkl6oPKhF8Rl4z9IKNgW_iuaWuh9SUjPWgoTh02LffOPy9mrir-46fITZY2RuZw"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "testfile",
+							"type": "file",
+							"src": "/C:/Users/sachi/Downloads/test.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/gateway/beMeetups/Documents(26)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gateway",
+						"beMeetups",
+						"Documents(26)"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/gateway/beMeetups/Documents(26) Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20iLCJleHAiOjE3MjMwNzY1OTQsImlhdCI6MTcyMTI3NjU5NCwiZW1haWwiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20ifQ.uUPOMMSrMOTNHnIPcEThLLsOkl6oPKhF8Rl4z9IKNgW_iuaWuh9SUjPWgoTh02LffOPy9mrir-46fITZY2RuZw"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "testfile",
+							"type": "file",
+							"src": "/C:/Users/sachi/Downloads/test.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/gateway/beMeetups/Documents(26)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gateway",
+						"beMeetups",
+						"Documents(26)"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://apprunner.code-wizard.in:8087/gateway/beMeetups/Documents(26)/$value",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWNoaW43IiwiZXhwIjoxNzIzNjAxMTc2LCJpYXQiOjE3MjE4MDExNzYsImVtYWlsIjoic2FjaGluMjI0MDA5OUBnbWFpbC5jb20ifQ.pQhDjJt9nVD2x1ZxFmHTKY4CyrS6qq8VZQsd1_2FMotQYbUcuwxZ-ME6ULy-A75TnibBDx72Na3DKga6I9MX8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20iLCJleHAiOjE3MjMwNzY1OTQsImlhdCI6MTcyMTI3NjU5NCwiZW1haWwiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20ifQ.uUPOMMSrMOTNHnIPcEThLLsOkl6oPKhF8Rl4z9IKNgW_iuaWuh9SUjPWgoTh02LffOPy9mrir-46fITZY2RuZw",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/gateway/beMeetups/Documents(105)/$value",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gateway",
+						"beMeetups",
+						"Documents(105)",
+						"$value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://apprunner.code-wizard.in:8087/gateway/beMeetups/Documents(26)/$value Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20iLCJleHAiOjE3MjMwNzY1OTQsImlhdCI6MTcyMTI3NjU5NCwiZW1haWwiOiJzYWluaWtoaWxhMTk5OUBnbWFpbC5jb20ifQ.uUPOMMSrMOTNHnIPcEThLLsOkl6oPKhF8Rl4z9IKNgW_iuaWuh9SUjPWgoTh02LffOPy9mrir-46fITZY2RuZw"
+					}
+				],
+				"url": {
+					"raw": "http://apprunner.code-wizard.in:8087/gateway/beMeetups/Documents(26)/$value",
+					"protocol": "http",
+					"host": [
+						"apprunner",
+						"code-wizard",
+						"in"
+					],
+					"port": "8087",
+					"path": [
+						"gateway",
+						"beMeetups",
+						"Documents(26)",
+						"$value"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
